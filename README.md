@@ -53,10 +53,35 @@ This implementation utilizes the Cooley-Turky FFT algorithm. It works by convert
 
 **Code:**
 
+The C++ implementation is divided into two primary functions:
+
+1. `multiplyPolynomials`, a wrapper that manages the mathematical pipeline and memory. This function manages the data preparation, pointwise multiplication, and final integer conversion.
+2. `fft`, a recursive function that performs the actual Fast Fourier Transform.
+
+Both of the function implementations are available in the [MultiplyPolynomials.cpp](./src/MultiplyPolynomials.cpp) file.
+
 ### References / Further Reading
 
 T. H. Cormen, C. E. Leiserson, R. L. Rivest, and C. Stein, Introduction to Algorithms, Fourth Edition. MIT Press, 2022. (Chapter 30 specifically talks about polynomials and FFT).
 
+“FFT · Arcane Algorithm Archive.” <https://www.algorithm-archive.org/contents/cooley_tukey/cooley_tukey.html>
+
 ## How to Run
 
+This repo uses CMake for the build system. To run, ensure you have a valid C++ / C compiler installed.
+
+```bash
+cd ./fft-polynomial-multiplication
+
+cmake -B build
+
+cmake --build build
+
+./build/fft-polynomial-multiplication
+```
+
 ## Runtime Sample
+
+Here is a sample of building and running the program:
+
+![Runtime sample](./images/image.png)
